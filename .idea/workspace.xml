@@ -2,21 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f7dfc3b6-cabd-44d5-8b7f-4516949b459b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/migrations/Version20201122174104.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20201122181801.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/FirmAtDateType.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/FirmController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/FirmController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Address.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Address.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Firm.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Firm.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Snapshot.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Snapshot.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/FirmType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/FirmType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/FirmRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/FirmRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/SnapshotRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/SnapshotRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/firm/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/firm/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/firm/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/firm/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/snapshot/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/snapshot/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -153,8 +140,17 @@
       <workItem from="1606024569532" duration="15231000" />
       <workItem from="1606042267032" duration="127000" />
       <workItem from="1606042928289" duration="8853000" />
-      <workItem from="1606056123435" duration="12380000" />
+      <workItem from="1606056123435" duration="13008000" />
+      <workItem from="1606070973867" duration="657000" />
     </task>
+    <task id="LOCAL-00001" summary="datepicking">
+      <created>1606069950766</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1606069950766</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -162,6 +158,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="datepicking" />
+    <option name="LAST_COMMIT_MESSAGE" value="datepicking" />
   </component>
   <component name="WindowStateProjectService">
     <state x="488" y="46" key="#com.intellij.ide.util.MemberChooser" timestamp="1606041655108">
@@ -172,6 +170,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728/-1920.-477.1920.1040@0.0.1366.728" timestamp="1606064595196" />
+    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1606069949469">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728/-1920.-477.1920.1040@0.0.1366.728" timestamp="1606069949469" />
     <state width="1323" height="223" key="GridCell.Tab.0.bottom" timestamp="1606042395522">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
