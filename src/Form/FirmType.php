@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Address;
 use App\Entity\Firm;
+use Doctrine\DBAL\Types\DateTimeType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -17,7 +18,8 @@ class FirmType extends AbstractType
             ->add('name')
             ->add('siren')
             ->add('immatriculationCity')
-            ->add('immatriculationDate')
+            ->add('immatriculationDate', \Symfony\Component\Form\Extension\Core\Type\DateTimeType::class,
+            ["years" =>  range(2023, 1500)])
             ->add('capital')
             ->add('legalForm')
             ->add('address', CollectionType::class ,

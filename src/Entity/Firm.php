@@ -56,7 +56,7 @@ class Firm
     private $address;
 
     /**
-     * @ORM\OneToMany(targetEntity=Snapshot::class, mappedBy="firm")
+     * @ORM\OneToMany(targetEntity=Snapshot::class, mappedBy="firm", cascade={"persist", "remove"})
      */
     private $snapshots;
 
@@ -196,4 +196,12 @@ class Firm
 
         return $this;
     }
+
+    public function __toString()
+    {
+        return $this->getName();
+        // TODO: Implement __toString() method.
+    }
+
+
 }

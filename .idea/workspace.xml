@@ -2,11 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f7dfc3b6-cabd-44d5-8b7f-4516949b459b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/config/packages/dev/debug.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20201122081146.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20201122082035.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/Snapshot.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/SnapshotRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/packages/dev/web_profiler.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/packages/test/web_profiler.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/routes/dev/web_profiler.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/SnapshotController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/SnapshotType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/snapshot/_delete_form.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/snapshot/_form.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/snapshot/index.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/snapshot/show.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/archive.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/archive.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -15,7 +19,10 @@
       <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/FirmController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/FirmController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Firm.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Firm.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/FirmType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/FirmType.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/firm/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/firm/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/firm/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/firm/show.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -106,6 +113,7 @@
       <path value="$PROJECT_DIR$/vendor/symfony/twig-bridge" />
       <path value="$PROJECT_DIR$/vendor/symfony/twig-bundle" />
       <path value="$PROJECT_DIR$/vendor/symfony/debug-bundle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/web-profiler-bundle" />
     </include_path>
   </component>
   <component name="ProjectId" id="1kdIRRMqL8w90qq9M4IqZRuybPn" />
@@ -134,7 +142,7 @@
       <option name="presentableId" value="Default" />
       <updated>1606024032409</updated>
       <workItem from="1606024033475" duration="513000" />
-      <workItem from="1606024569532" duration="9843000" />
+      <workItem from="1606024569532" duration="15124000" />
     </task>
     <servers />
   </component>
@@ -145,18 +153,18 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="488" y="46" key="#com.intellij.ide.util.MemberChooser" timestamp="1606027981120">
+    <state x="488" y="46" key="#com.intellij.ide.util.MemberChooser" timestamp="1606041655108">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="488" y="46" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728/-1920.-477.1920.1040@0.0.1366.728" timestamp="1606027981120" />
+    <state x="488" y="46" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728/-1920.-477.1920.1040@0.0.1366.728" timestamp="1606041655108" />
     <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606032900200">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728/-1920.-477.1920.1040@0.0.1366.728" timestamp="1606032900200" />
-    <state x="390" y="97" width="585" height="534" key="find.popup" timestamp="1606031062634">
+    <state x="390" y="97" width="585" height="534" key="find.popup" timestamp="1606039746312">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="390" y="97" width="585" height="534" key="find.popup/0.0.1366.728/-1920.-477.1920.1040@0.0.1366.728" timestamp="1606031062634" />
+    <state x="390" y="97" width="585" height="534" key="find.popup/0.0.1366.728/-1920.-477.1920.1040@0.0.1366.728" timestamp="1606039746312" />
     <state x="339" y="162" key="run.anything.popup" timestamp="1606030542030">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

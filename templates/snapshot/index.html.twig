@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Snapshot index{% endblock %}
+
+{% block body %}
+    <h1>Snapshot index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Siren</th>
+                <th>ImmatriculationCity</th>
+                <th>ImmatriculationDate</th>
+                <th>Capital</th>
+                <th>LegalForm</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for snapshot in snapshots %}
+            <tr>
+                <td>{{ snapshot.id }}</td>
+                <td>{{ snapshot.name }}</td>
+                <td>{{ snapshot.siren }}</td>
+                <td>{{ snapshot.immatriculationCity }}</td>
+                <td>{{ snapshot.immatriculationDate ? snapshot.immatriculationDate|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ snapshot.capital }}</td>
+                <td>{{ snapshot.legalForm }}</td>
+                <td>
+                    <a href="{{ path('snapshot_show', {'id': snapshot.id}) }}">show</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

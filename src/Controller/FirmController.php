@@ -34,8 +34,11 @@ class FirmController extends AbstractController
     {
         $firm = new Firm();
         $addN= new Address();
+        $addB= new Address();
 
         $firm->addAddress($addN);
+        $firm->addAddress($addB);
+
 
         $form = $this->createForm(FirmType::class, $firm);
         $form->handleRequest($request);
