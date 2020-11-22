@@ -51,19 +51,29 @@ class Firm
     private $legalForm;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Address::class, cascade={"persist"})
-     */
-    private $address;
-
-    /**
      * @ORM\OneToMany(targetEntity=Snapshot::class, mappedBy="firm", cascade={"persist", "remove"})
      */
     private $snapshots;
 
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $createdAt;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $updatedAt;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Address::class, mappedBy="firm", cascade={"persist"})
+     */
+    private $addresses;
+
     public function __construct()
     {
-        $this->address = new ArrayCollection();
         $this->snapshots = new ArrayCollection();
+        $this->addresses = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -143,29 +153,6 @@ class Firm
         return $this;
     }
 
-    /**
-     * @return Collection|Address[]
-     */
-    public function getAddress(): Collection
-    {
-        return $this->address;
-    }
-
-    public function addAddress(Address $address): self
-    {
-        if (!$this->address->contains($address)) {
-            $this->address[] = $address;
-        }
-
-        return $this;
-    }
-
-    public function removeAddress(Address $address): self
-    {
-        $this->address->removeElement($address);
-
-        return $this;
-    }
 
     /**
      * @return Collection|Snapshot[]
@@ -201,6 +188,55 @@ class Firm
     {
         return $this->getName();
         // TODO: Implement __toString() method.
+    }
+
+    public function getCreatedAt(): ?\DateTimeInterface
+    {
+        return $this->createdAt;
+    }
+
+    public function setCreatedAt(\DateTimeInterface $createdAt): self
+    {
+        $this->createdAt = $createdAt;
+
+        return $this;
+    }
+
+    public function getUpdatedAt(): ?\DateTimeInterface
+    {
+        return $this->updatedAt;
+    }
+
+    public function setUpdatedAt(\DateTimeInterface $updatedAt): self
+    {
+        $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Address[]
+     */
+    public function getAddresses(): Collection
+    {
+        return $this->addresses;
+    }
+
+    public function addAddress(Address $address): self
+    {
+        if (!$this->addresses->contains($address)) {
+            $this->addresses[] = $address;
+            $address->setFirm($this);
+        }
+
+        return $this;
+    }
+
+    public function removeAddress(Address $address): self
+    {
+        $this->addresses->removeElement($address);
+        $address->setFirm(null);
+        return $this;
     }
 
 

@@ -2,8 +2,11 @@
 
 namespace App\Repository;
 
+use App\Entity\Firm;
 use App\Entity\Snapshot;
+use DateTime;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\Query\Expr\Join;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
@@ -19,6 +22,18 @@ class SnapshotRepository extends ServiceEntityRepository
         parent::__construct($registry, Snapshot::class);
     }
 
+    public function findSnapshotByDate(Firm $firm, DateTime $date)
+    {
+        return $this->createQueryBuilder('s')
+            ->andWhere('s.modificationDateTime <= :date')
+            ->andWhere('s.firm = :firm')
+            ->setParameters(['date' => $date, 'firm' => $firm])
+            ->setMaxResults(1)
+            ->orderBy('s.modificationDateTime', 'DESC')
+            ->getQuery()
+            ->getOneOrNullResult()
+            ;
+    }
     // /**
     //  * @return Snapshot[] Returns an array of Snapshot objects
     //  */

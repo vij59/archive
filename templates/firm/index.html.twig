@@ -30,7 +30,7 @@
                 <td>{{ firm.capital }}</td>
                 <td>{{ firm.legalForm }}</td>
                 <td>
-                    {% for address in firm.address %}
+                    {% for address in firm.addresses %}
                         {{ address.number }}
                         {{ address.wayType }}
                         {{ address.wayName }}

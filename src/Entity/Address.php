@@ -42,6 +42,11 @@ class Address
      */
     private $zipCode;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Firm::class, inversedBy="addresses")
+     */
+    private $firm;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -112,6 +117,18 @@ class Address
 //        // TODO: Implement __toString() method.
 //        return ''.$this->getNumber();
 //    }
+
+public function getFirm(): ?Firm
+{
+    return $this->firm;
+}
+
+public function setFirm(?Firm $firm): self
+{
+    $this->firm = $firm;
+
+    return $this;
+}
 
 
 }

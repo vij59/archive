@@ -5,9 +5,11 @@ namespace App\Controller;
 use App\Entity\Address;
 use App\Entity\Firm;
 use App\Entity\Snapshot;
+use App\Form\FirmAtDateType;
 use App\Form\FirmType;
 use App\Repository\FirmRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -33,12 +35,12 @@ class FirmController extends AbstractController
     public function new(Request $request): Response
     {
         $firm = new Firm();
+
         $addN= new Address();
         $addB= new Address();
 
         $firm->addAddress($addN);
         $firm->addAddress($addB);
-
 
         $form = $this->createForm(FirmType::class, $firm);
         $form->handleRequest($request);
@@ -46,8 +48,13 @@ class FirmController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
 
+            $newDate = new \DateTime('NOW');
+            $firm->setCreatedAt($newDate);
+            $firm->setUpdatedAt($newDate);
             $snap = new Snapshot();
             $snap->setFirm($firm);
+            $snap->setCreatedAt($newDate);
+            $snap->setUpdatedAt($newDate);
             $snap->setName($firm->getName());
             $snap->setSiren($firm->getSiren());
             $snap->setCapital($firm->getCapital());
@@ -71,12 +78,35 @@ class FirmController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="firm_show", methods={"GET"})
+     * @Route("/{id}", name="firm_show")
      */
-    public function show(Firm $firm): Response
+    public function show(Firm $firm, Request $request): Response
     {
+        $form = $this->createFormBuilder()
+            ->add('date', DateTimeType::class,
+                [ 'data' => new \DateTime()]
+            )
+            ->getForm();
+
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $date = $form->get('date')->getData();
+            $entityManager = $this->getDoctrine()->getManager();
+            /** @var Snapshot | null $snapshot */
+            $snapshot = $entityManager->getRepository(Snapshot::class)->findSnapshotByDate($firm, $date);
+
+            if($snapshot) {
+               // dd($snapshot);
+               return $this->redirectToRoute('snapshot_show', ['id' => $snapshot->getId()]);
+            }
+            else {
+                $this->addFlash('warning' , 'Aucune version pour cette date');
+            }
+        }
+
         return $this->render('firm/show.html.twig', [
             'firm' => $firm,
+            'form' => $form->createView()
         ]);
     }
 
@@ -97,9 +127,12 @@ class FirmController extends AbstractController
 
             $entityManager = $this->getDoctrine()->getManager();
 
-
+            $newDate = new \DateTime('NOW');
+            $firm->setUpdatedAt($newDate);
             $snap = new Snapshot();
             $snap->setFirm($firm);
+            $snap->setCreatedAt($newDate);
+            $snap->setUpdatedAt($newDate);
             $snap->setName($firm->getName());
             $snap->setSiren($firm->getSiren());
             $snap->setCapital($firm->getCapital());

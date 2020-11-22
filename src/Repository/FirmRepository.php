@@ -3,7 +3,9 @@
 namespace App\Repository;
 
 use App\Entity\Firm;
+use DateTime;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\Query\Expr\Join;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
@@ -17,6 +19,20 @@ class FirmRepository extends ServiceEntityRepository
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Firm::class);
+    }
+
+    public function findSnapshotByDate(Firm $firm, DateTime $date)
+    {
+        return $this->createQueryBuilder('f')
+          ->innerJoin('f.snapshots', 'snapshot' , Join::WITH, 'snapshot.modificationDateTime <=
+          :date'  )
+            ->andWhere('f.id = :firmId')
+            ->setParameters(['date' => $date, 'firmId' => $firm->getId()])
+            ->setMaxResults(1)
+            ->orderBy('snapshot.modificationDateTime', 'DESC')
+            ->getQuery()
+            ->getOneOrNullResult()
+            ;
     }
 
     // /**

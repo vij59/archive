@@ -5,32 +5,17 @@
 {% block body %}
 {#    <h1>Entreprise</h1>#}
 
-    <label for="meeting-time">Archive au temps T :</label>
+{#    <label for="meeting-time">Archive au temps T :</label>#}
 
 {#    <form>#}
 {#        <label for="party">Veuillez choisir une date et une heure pour l'archive :</label>#}
-        <input id="alert"  type="datetime-local" name="partydate">
+{#        <input id="alert"  type="datetime-local" name="partydate">#}
 {#    </form>#}
-{#    <p>Date: <input type="text" id="datepicker"/></p>#}
-{#    <div id="placeholder"></div>#}
 
-{% endblock %}
-
-    {% block javascripts %}
-
-        <script src="/jquery/jquery-3.4.1.min.js"></script>
-<script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-        <script>
-            $("#alert").change(function () {
-               // var date = $(this).datetimepicker("getDate");
-                alert(this.value);
-
-            });
-
-            // 2020-10-31T18:30
-        </script>
-    {% endblock %}
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+    <button class="btn btn-primary" type="submit">Valider </button>
+    {{ form_end(form) }}
 
     <table class="table">
         <tbody>
@@ -61,7 +46,7 @@
             <tr>
                 <th>Addresses</th>
                 <td>
-                    {% for address in firm.address %}
+                    {% for address in firm.addresses %}
                         {{ address.number }}
                         {{ address.wayType }}
                         {{ address.wayName }}
@@ -77,18 +62,23 @@
 
                        <pre>
 </pre>
-                    {% for snap in firm.snapshots %}
-                        <a href="/snapshot/{{ snap.id }}">
-                      Archive du
-                        {{ snap.modificationDateTime ? snap.modificationDateTime |date('Y-m-d H:i:s') : '' }}
-                        </a>
-<br/>
-                    {% endfor %}
+
+{#                    {% for snap in firm.snapshots %}#}
+{#                        {{ dump(snap.modificationDateTime) }}#}
+{#                        <a href="/snapshot/{{ snap.id }}">#}
+{#                      Archive du#}
+{#                        {{ snap.modificationDateTime ? snap.modificationDateTime |date('Y-m-d H:i:s') : '' }}#}
+{#                        </a>#}
+{#<br/>#}
+{#                    {% endfor %}#}
+
                 </td>
 
             </tr>
         </tbody>
     </table>
+
+    <p id="regTitle"></p>
 
     <a href="{{ path('firm_index') }}">Retour à la liste</a>
 
@@ -96,3 +86,14 @@
 
     {{ include('firm/_delete_form.html.twig') }}
 {% endblock %}
+
+ {% block javascripts %}
+
+     <script src="/jquery/jquery-3.4.1.min.js"></script>
+     <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+     <script>
+         $('.datepicker').datepicker();
+     </script>
+
+ {% endblock %}
