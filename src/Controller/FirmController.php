@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Address;
 use App\Entity\Firm;
+use App\Entity\Snapshot;
 use App\Form\FirmType;
 use App\Repository\FirmRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -42,6 +43,17 @@ class FirmController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
 
+            $snap = new Snapshot();
+            $snap->setFirm($firm);
+            $snap->setName($firm->getName());
+            $snap->setSiren($firm->getSiren());
+            $snap->setCapital($firm->getCapital());
+            $snap->setImmatriculationCity($firm->getImmatriculationCity());
+            $snap->setImmatriculationDate($firm->getImmatriculationDate());
+            $snap->setLegalForm($firm->getLegalForm());
+            $snap->addAddress($addN);
+
+            $entityManager->persist($snap);
             $entityManager->persist($firm);
             $entityManager->flush();
 
@@ -70,10 +82,30 @@ class FirmController extends AbstractController
     public function edit(Request $request, Firm $firm): Response
     {
         $form = $this->createForm(FirmType::class, $firm);
+
+        $addN= new Address();
+        $firm->addAddress($addN);
+
         $form->handleRequest($request);
 
+
         if ($form->isSubmitted() && $form->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
+
+            $entityManager = $this->getDoctrine()->getManager();
+
+
+            $snap = new Snapshot();
+            $snap->setFirm($firm);
+            $snap->setName($firm->getName());
+            $snap->setSiren($firm->getSiren());
+            $snap->setCapital($firm->getCapital());
+            $snap->setImmatriculationCity($firm->getImmatriculationCity());
+            $snap->setImmatriculationDate($firm->getImmatriculationDate());
+            $snap->setLegalForm($firm->getLegalForm());
+//            $snap->addAddress($addN);
+
+            $entityManager->persist($snap);
+            $entityManager->flush();
 
             return $this->redirectToRoute('firm_index');
         }

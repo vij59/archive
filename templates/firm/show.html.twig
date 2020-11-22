@@ -42,6 +42,21 @@
                         {{ address.zipCode }}
                     {% endfor %}
                 </td>
+            </tr>
+            <tr>
+                <th>Snapshot</th>
+                <td>
+
+                       <pre>
+    {{ dump(firm.snapshots) }}
+</pre>
+                    {% for snap in firm.snapshots %}
+                        {{ snap.name }}
+                        {{ snap.legalForm }}
+                        {{ snap.immatriculationDate ? firm.immatriculationDate|date('Y-m-d H:i:s') : '' }}
+
+                    {% endfor %}
+                </td>
 
             </tr>
         </tbody>

@@ -2,15 +2,15 @@
 
 namespace App\Entity;
 
-use App\Repository\FirmRepository;
+use App\Repository\SnapshotRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass=FirmRepository::class)
+ * @ORM\Entity(repositoryClass=SnapshotRepository::class)
  */
-class Firm
+class Snapshot
 {
     /**
      * @ORM\Id
@@ -18,6 +18,12 @@ class Firm
      * @ORM\Column(type="integer")
      */
     private $id;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Firm::class, inversedBy="snapshots")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $firm;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -45,30 +51,35 @@ class Firm
     private $capital;
 
     /**
-     * @ORM\ManyToOne(targetEntity=LegalForm::class)
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\Column(type="string", length=255)
      */
     private $legalForm;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Address::class, cascade={"persist"})
+     * @ORM\ManyToMany(targetEntity=Address::class)
      */
     private $address;
-
-    /**
-     * @ORM\OneToMany(targetEntity=Snapshot::class, mappedBy="firm")
-     */
-    private $snapshots;
 
     public function __construct()
     {
         $this->address = new ArrayCollection();
-        $this->snapshots = new ArrayCollection();
     }
 
     public function getId(): ?int
     {
         return $this->id;
+    }
+
+    public function getFirm(): ?Firm
+    {
+        return $this->firm;
+    }
+
+    public function setFirm(?Firm $firm): self
+    {
+        $this->firm = $firm;
+
+        return $this;
     }
 
     public function getName(): ?string
@@ -83,12 +94,12 @@ class Firm
         return $this;
     }
 
-    public function getSiren(): ?string
+    public function getSiren(): ?int
     {
         return $this->siren;
     }
 
-    public function setSiren(string $siren): self
+    public function setSiren(int $siren): self
     {
         $this->siren = $siren;
 
@@ -131,12 +142,12 @@ class Firm
         return $this;
     }
 
-    public function getLegalForm(): ?LegalForm
+    public function getLegalForm(): ?string
     {
         return $this->legalForm;
     }
 
-    public function setLegalForm(?LegalForm $legalForm): self
+    public function setLegalForm(string $legalForm): self
     {
         $this->legalForm = $legalForm;
 
@@ -163,36 +174,6 @@ class Firm
     public function removeAddress(Address $address): self
     {
         $this->address->removeElement($address);
-
-        return $this;
-    }
-
-    /**
-     * @return Collection|Snapshot[]
-     */
-    public function getSnapshots(): Collection
-    {
-        return $this->snapshots;
-    }
-
-    public function addSnapshot(Snapshot $snapshot): self
-    {
-        if (!$this->snapshots->contains($snapshot)) {
-            $this->snapshots[] = $snapshot;
-            $snapshot->setFirm($this);
-        }
-
-        return $this;
-    }
-
-    public function removeSnapshot(Snapshot $snapshot): self
-    {
-        if ($this->snapshots->removeElement($snapshot)) {
-            // set the owning side to null (unless already changed)
-            if ($snapshot->getFirm() === $this) {
-                $snapshot->setFirm(null);
-            }
-        }
 
         return $this;
     }
