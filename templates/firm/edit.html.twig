@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Firm{% endblock %}
+
+{% block body %}
+    <h1>Edit Firm</h1>
+
+    {{ include('firm/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('firm_index') }}">back to list</a>
+
+    {{ include('firm/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Firm index{% endblock %}
+
+{% block body %}
+    <h1>Firm index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Siren</th>
+                <th>ImmatriculationCity</th>
+                <th>ImmatriculationDate</th>
+                <th>Capital</th>
+                <th>Legal Form</th>
+                <th>Addresses</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for firm in firms %}
+            <tr>
+                <td>{{ firm.id }}</td>
+                <td>{{ firm.name }}</td>
+                <td>{{ firm.siren }}</td>
+                <td>{{ firm.immatriculationCity }}</td>
+                <td>{{ firm.immatriculationDate ? firm.immatriculationDate|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ firm.capital }}</td>
+                <td>{{ firm.legalForm }}</td>
+                <td>
+                    {% for address in firm.address %}
+                        {{ address.number }}
+                        {{ address.wayType }}
+                        {{ address.wayName }}
+                        {{ address.city }}
+                        {{ address.zipCode}}
+                    {% endfor %}
+                </td>
+
+                <td>
+                    <a href="{{ path('firm_show', {'id': firm.id}) }}">show</a>
+                    <a href="{{ path('firm_edit', {'id': firm.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('firm_new') }}">Create new</a>
+{% endblock %}
