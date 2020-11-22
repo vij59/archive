@@ -3,7 +3,7 @@
 {% block title %}Firm index{% endblock %}
 
 {% block body %}
-    <h1>Firm index</h1>
+    <h1>Entreprises</h1>
 
     <table class="table">
         <thead>
@@ -41,8 +41,8 @@
                 </td>
 
                 <td>
-                    <a href="{{ path('firm_show', {'id': firm.id}) }}">show</a>
-                    <a href="{{ path('firm_edit', {'id': firm.id}) }}">edit</a>
+                    <a href="{{ path('firm_show', {'id': firm.id}) }}">Détails</a>
+                    <a href="{{ path('firm_edit', {'id': firm.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}
@@ -53,5 +53,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('firm_new') }}">Create new</a>
+    <a href="{{ path('firm_new') }}">Créer nouvelle société</a>
 {% endblock %}

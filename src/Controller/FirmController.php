@@ -54,6 +54,7 @@ class FirmController extends AbstractController
             $snap->setImmatriculationCity($firm->getImmatriculationCity());
             $snap->setImmatriculationDate($firm->getImmatriculationDate());
             $snap->setLegalForm($firm->getLegalForm());
+            $snap->setModificationDateTime(new \DateTime('NOW'));
             $snap->addAddress($addN);
 
             $entityManager->persist($snap);
@@ -105,6 +106,7 @@ class FirmController extends AbstractController
             $snap->setImmatriculationCity($firm->getImmatriculationCity());
             $snap->setImmatriculationDate($firm->getImmatriculationDate());
             $snap->setLegalForm($firm->getLegalForm());
+            $snap->setModificationDateTime(new \DateTime('NOW'));
 //            $snap->addAddress($addN);
 
             $entityManager->persist($snap);

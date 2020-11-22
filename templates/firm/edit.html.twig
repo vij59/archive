@@ -3,11 +3,11 @@
 {% block title %}Edit Firm{% endblock %}
 
 {% block body %}
-    <h1>Edit Firm</h1>
+    <h1>Mettre à jour mon l'entreprise</h1>
 
     {{ include('firm/_form.html.twig', {'button_label': 'Update'}) }}
 
-    <a href="{{ path('firm_index') }}">back to list</a>
+    <a href="{{ path('firm_index') }}">Retour à la liste</a>
 
     {{ include('firm/_delete_form.html.twig') }}
 {% endblock %}

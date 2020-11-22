@@ -3,7 +3,7 @@
 {% block title %}Snapshot{% endblock %}
 
 {% block body %}
-    <h1>Snapshot</h1>
+    <h1>Archive</h1>
 
     <table class="table">
         <tbody>
@@ -35,10 +35,14 @@
                 <th>LegalForm</th>
                 <td>{{ snapshot.legalForm }}</td>
             </tr>
+            <tr>
+                <th>Modification</th>
+                <td>{{ snapshot.modificationDateTime  ? snapshot.modificationDateTime|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
         </tbody>
     </table>
 
-    <a href="{{ path('snapshot_index') }}">back to list</a>
+    <a href="{{ path('snapshot_index') }}">Retour à la liste</a>
 
     {{ include('snapshot/_delete_form.html.twig') }}
 {% endblock %}

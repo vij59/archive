@@ -2,28 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f7dfc3b6-cabd-44d5-8b7f-4516949b459b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/config/packages/dev/web_profiler.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/test/web_profiler.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/routes/dev/web_profiler.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/SnapshotController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/SnapshotType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/snapshot/_delete_form.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/snapshot/_form.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/snapshot/index.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/snapshot/show.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/Version20201122114628.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/SiteController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/home/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/archive.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/archive.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/FirmController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/FirmController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Firm.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Firm.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/FirmType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/FirmType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Snapshot.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Snapshot.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/firm/_delete_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/firm/_delete_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/firm/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/firm/_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/firm/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/firm/edit.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/firm/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/firm/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/firm/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/firm/new.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/firm/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/firm/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/snapshot/_delete_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/snapshot/_delete_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/snapshot/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/snapshot/_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/snapshot/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/snapshot/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/snapshot/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/snapshot/show.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,6 +130,21 @@
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Edouard\Documents\symfony\projets\archive\templates\home" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="127.0.0.1:8000" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://127.0.0.1:8000">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.127.0.0.1:8000" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -142,7 +154,9 @@
       <option name="presentableId" value="Default" />
       <updated>1606024032409</updated>
       <workItem from="1606024033475" duration="513000" />
-      <workItem from="1606024569532" duration="15124000" />
+      <workItem from="1606024569532" duration="15231000" />
+      <workItem from="1606042267032" duration="127000" />
+      <workItem from="1606042928289" duration="8793000" />
     </task>
     <servers />
   </component>
@@ -157,10 +171,62 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="488" y="46" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728/-1920.-477.1920.1040@0.0.1366.728" timestamp="1606041655108" />
-    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606032900200">
+    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606053655301">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728/-1920.-477.1920.1040@0.0.1366.728" timestamp="1606032900200" />
+    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728/-1920.-477.1920.1040@0.0.1366.728" timestamp="1606053655301" />
+    <state width="1323" height="223" key="GridCell.Tab.0.bottom" timestamp="1606042395522">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="223" key="GridCell.Tab.0.bottom/0.0.1366.728/-1920.-477.1920.1040@0.0.1366.728" timestamp="1606042395522" />
+    <state width="1323" height="223" key="GridCell.Tab.0.center" timestamp="1606042395522">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="223" key="GridCell.Tab.0.center/0.0.1366.728/-1920.-477.1920.1040@0.0.1366.728" timestamp="1606042395522" />
+    <state width="1323" height="223" key="GridCell.Tab.0.left" timestamp="1606042395522">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="223" key="GridCell.Tab.0.left/0.0.1366.728/-1920.-477.1920.1040@0.0.1366.728" timestamp="1606042395522" />
+    <state width="1323" height="223" key="GridCell.Tab.0.right" timestamp="1606042395522">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="223" key="GridCell.Tab.0.right/0.0.1366.728/-1920.-477.1920.1040@0.0.1366.728" timestamp="1606042395522" />
+    <state width="1323" height="223" key="GridCell.Tab.1.bottom" timestamp="1606042395523">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="223" key="GridCell.Tab.1.bottom/0.0.1366.728/-1920.-477.1920.1040@0.0.1366.728" timestamp="1606042395523" />
+    <state width="1323" height="223" key="GridCell.Tab.1.center" timestamp="1606042395523">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="223" key="GridCell.Tab.1.center/0.0.1366.728/-1920.-477.1920.1040@0.0.1366.728" timestamp="1606042395523" />
+    <state width="1323" height="223" key="GridCell.Tab.1.left" timestamp="1606042395522">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="223" key="GridCell.Tab.1.left/0.0.1366.728/-1920.-477.1920.1040@0.0.1366.728" timestamp="1606042395522" />
+    <state width="1323" height="223" key="GridCell.Tab.1.right" timestamp="1606042395523">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="223" key="GridCell.Tab.1.right/0.0.1366.728/-1920.-477.1920.1040@0.0.1366.728" timestamp="1606042395523" />
+    <state width="1323" height="223" key="GridCell.Tab.2.bottom" timestamp="1606042395524">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="223" key="GridCell.Tab.2.bottom/0.0.1366.728/-1920.-477.1920.1040@0.0.1366.728" timestamp="1606042395524" />
+    <state width="1323" height="223" key="GridCell.Tab.2.center" timestamp="1606042395523">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="223" key="GridCell.Tab.2.center/0.0.1366.728/-1920.-477.1920.1040@0.0.1366.728" timestamp="1606042395523" />
+    <state width="1323" height="223" key="GridCell.Tab.2.left" timestamp="1606042395523">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="223" key="GridCell.Tab.2.left/0.0.1366.728/-1920.-477.1920.1040@0.0.1366.728" timestamp="1606042395523" />
+    <state width="1323" height="223" key="GridCell.Tab.2.right" timestamp="1606042395524">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="223" key="GridCell.Tab.2.right/0.0.1366.728/-1920.-477.1920.1040@0.0.1366.728" timestamp="1606042395524" />
+    <state x="399" y="87" key="NewPhpClassDialog" timestamp="1606053427837">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="399" y="87" key="NewPhpClassDialog/0.0.1366.728/-1920.-477.1920.1040@0.0.1366.728" timestamp="1606053427837" />
     <state x="390" y="97" width="585" height="534" key="find.popup" timestamp="1606039746312">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

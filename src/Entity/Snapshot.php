@@ -60,6 +60,11 @@ class Snapshot
      */
     private $address;
 
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $modificationDateTime;
+
     public function __construct()
     {
         $this->address = new ArrayCollection();
@@ -174,6 +179,18 @@ class Snapshot
     public function removeAddress(Address $address): self
     {
         $this->address->removeElement($address);
+
+        return $this;
+    }
+
+    public function getModificationDateTime(): ?\DateTimeInterface
+    {
+        return $this->modificationDateTime;
+    }
+
+    public function setModificationDateTime(\DateTimeInterface $modificationDateTime): self
+    {
+        $this->modificationDateTime = $modificationDateTime;
 
         return $this;
     }

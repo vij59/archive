@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>{% block title %}Welcome!{% endblock %}</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/jquery.datetimepicker.css"/ >
 
     {% block stylesheets %}{% endblock %}
 </head>
@@ -17,10 +18,10 @@
     <div class="collapse navbar-collapse" id="navbarColor01">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="/" onclick="myFunction()">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/" ">Accueil</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/firm" id="firm">Firm <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/firm" id="firm">Entreprises</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/snapshot" onclick="myFunction()">Archives</a>
